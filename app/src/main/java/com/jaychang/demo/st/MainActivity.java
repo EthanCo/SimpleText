@@ -65,6 +65,17 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(MainActivity.this, "textview", Toast.LENGTH_SHORT).show();
       }
     });
-  }
 
+    TextView textView2 = findViewById(R.id.textView2);
+    SimpleText simpleText2 = SimpleText.from("以上权限可在系统设置中关闭。请在前查看并 同意《用户协议》和《用户隐私》。")
+            .first("《用户协议》","《用户隐私》")
+            .onClick(textView2, new OnTextClickListener() {
+              @Override
+              public void onClicked(CharSequence text, Range range, Object tag) {
+                Toast.makeText(MainActivity.this, text, Toast.LENGTH_SHORT).show();
+              }
+            })
+            .textColor(R.color.colorPrimary);
+    textView2.setText(simpleText2);
+  }
 }

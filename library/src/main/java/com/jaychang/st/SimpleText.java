@@ -52,11 +52,31 @@ public class SimpleText extends SpannableString {
     return this;
   }
 
+  public SimpleText first(String... targets) {
+    rangeList.clear();
+    for (String target : targets) {
+      int index = toString().indexOf(target);
+      Range range = Range.create(index, index + target.length());
+      rangeList.add(range);
+    }
+    return this;
+  }
+
   public SimpleText last(String target) {
     rangeList.clear();
     int index = toString().lastIndexOf(target);
     Range range = Range.create(index, index + target.length());
     rangeList.add(range);
+    return this;
+  }
+
+  public SimpleText last(String... targets) {
+    rangeList.clear();
+    for (String target : targets) {
+      int index = toString().lastIndexOf(target);
+      Range range = Range.create(index, index + target.length());
+      rangeList.add(range);
+    }
     return this;
   }
 
@@ -66,6 +86,18 @@ public class SimpleText extends SpannableString {
     for (Integer index : indexes) {
       Range range = Range.create(index, index + target.length());
       rangeList.add(range);
+    }
+    return this;
+  }
+
+  public SimpleText all(String... targets) {
+    rangeList.clear();
+    for (String target : targets) {
+      List<Integer> indexes = Utils.indexesOf(toString(), target);
+      for (Integer index : indexes) {
+        Range range = Range.create(index, index + target.length());
+        rangeList.add(range);
+      }
     }
     return this;
   }
