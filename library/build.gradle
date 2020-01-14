@@ -1,5 +1,8 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.novoda.bintray-release'
+
+apply plugin: 'com.github.dcendents.android-maven'
+
+group='com.github.EthanCo'
 
 buildscript {
     repositories {
@@ -29,13 +32,4 @@ android {
 
 dependencies {
     api deps.support.appcompat
-}
-
-publish {
-    userOrg = 'jaychang0917'
-    groupId = 'com.jaychang'
-    artifactId = 'simpletext'
-    publishVersion = '2.0.1'
-    desc = 'A simple spannable string helper'
-    website = 'https://github.com/jaychang0917/SimpleText'
 }
