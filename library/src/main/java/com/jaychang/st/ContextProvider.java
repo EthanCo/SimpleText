@@ -1,16 +1,8 @@
 package com.jaychang.st;
 
-import android.content.ContentProvider;
-import android.content.ContentValues;
-import android.content.Context;
-import android.database.Cursor;
-import android.net.Uri;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+public class ContextProvider /*extends ContentProvider*/ {
 
-public class ContextProvider extends ContentProvider {
-
-  static Context context;
+  /*static Context context;
 
   @Override
   public boolean onCreate() {
@@ -44,5 +36,5 @@ public class ContextProvider extends ContentProvider {
   @Override
   public int update(@NonNull Uri uri, @Nullable ContentValues values, @Nullable String selection, @Nullable String[] selectionArgs) {
     return 0;
-  }
+  }*/
 }
